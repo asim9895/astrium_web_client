@@ -15,6 +15,9 @@ const ForgotPasswordPage = React.lazy(
 const DashboardPage = React.lazy(
   () => import("../pages/dashboard/DashboardPage")
 );
+const ProjectDashboardPage = React.lazy(
+  () => import("../pages/projects/ProjectDashboardPage")
+);
 
 const NotFoundPage = React.lazy(() => import("../pages/NotFoundPage"));
 
@@ -72,6 +75,14 @@ const AppRoutes = () => {
             element={
               <ProtectedRoutes>
                 <DashboardPage />
+              </ProtectedRoutes>
+            }
+          />
+          <Route
+            path="/project-dashboard"
+            element={
+              <ProtectedRoutes>
+                <ProjectDashboardPage />
               </ProtectedRoutes>
             }
           />
