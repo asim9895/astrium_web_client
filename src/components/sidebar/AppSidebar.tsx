@@ -60,6 +60,8 @@ import {
   SidebarRail,
 } from "@/components/ui/sidebar";
 import { Link } from "react-router-dom";
+import { useAppDispatch } from "@/hooks";
+import { logout_user } from "@/redux/slices/userSlice";
 
 // This is sample data.
 const data = {
@@ -200,6 +202,12 @@ const data = {
 
 export function AppSidebar({ children }: { children: React.ReactNode }) {
   const [activeTeam, setActiveTeam] = React.useState(data.teams[0]);
+
+  const dispatch = useAppDispatch();
+
+  const handle_logout = () => {
+    dispatch(logout_user()); // Set authenticated to false
+  };
 
   return (
     <>
@@ -463,7 +471,7 @@ export function AppSidebar({ children }: { children: React.ReactNode }) {
                     </DropdownMenuItem>
                   </DropdownMenuGroup>
                   <DropdownMenuSeparator />
-                  <DropdownMenuItem>
+                  <DropdownMenuItem onClick={handle_logout}>
                     <LogOut />
                     Log out
                   </DropdownMenuItem>

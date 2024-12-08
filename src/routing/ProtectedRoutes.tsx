@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { useAppSelector } from "@/hooks";
 import { AppSidebar } from "@/components/sidebar/AppSidebar";

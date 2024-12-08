@@ -54,6 +54,7 @@ export function AppSidebarInset({ children }: { children: React.ReactNode }) {
           <Socials />
         </div>
       </header>
+
       {children}
     </SidebarInset>
   );
